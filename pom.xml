@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>transaction-practice</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.luozi</groupId>
+        <artifactId>common</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../common/pom.xml</relativePath>
+    </parent>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>       <!-- 用指定环境的属性替换 resource 目录下的属性文件中的 ${}  -->
+                    <filter>src/main/resources/dev/db.properties</filter>
+                </filters>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering> <!-- 开启 filter 替换 -->
+                <excludes>  <!-- 除去dev 目录下的文件 -->
+                    <exclude>dev/*</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+</project>
