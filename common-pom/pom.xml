@@ -25,17 +25,15 @@
         </plugins>
 
     </build>
-
-    <!-- 容易被依赖的jar 包放在上面, 这样能保证 使用的jar 包不被覆盖 -->
+    <!--  容易被依赖的jar 包放在上面, 这样能保证 使用的jar 包不被覆盖  -->
     <dependencies>
-
-        <!-- 日志 -->
+        <!--  日志  -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback-classic.version}</version>
         </dependency>
-        <!-- 配置所有依赖库的日志依赖,项目中写日志不用 start-->
+        <!--  配置所有依赖库的日志依赖,项目中写日志不用 start -->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
@@ -46,9 +44,8 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-        <!-- 配置所有依赖库的日志依赖,项目中写日志不用 end-->
-
-        <!-- utils 相关jar包 -->
+        <!--  配置所有依赖库的日志依赖,项目中写日志不用 end -->
+        <!--  utils 相关jar包  -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -69,21 +66,18 @@
             <artifactId>commons-beanutils</artifactId>
             <version>${commons-beanutils.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
-
-        <!-- 测试 -->
+        <!--  测试  -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
         </dependency>
-
-        <!-- Core Spring container-->
+        <!--  Core Spring container -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -109,15 +103,13 @@
             <artifactId>spring-expression</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-        <!-- spring testing -->
+        <!--  spring testing  -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-        <!-- spring data access-->
+        <!--  spring data access -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -133,16 +125,25 @@
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-
+        <!--  mysql  -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <!--  Hibernate  -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
     </dependencies>
-
     <properties>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -161,7 +162,7 @@
         <guava.version>19.0</guava.version>
         <spring.version>4.3.3.RELEASE</spring.version>
         <lombok.version>1.16.10</lombok.version>
-
+        <mysql-connector-java.version>6.0.4</mysql-connector-java.version>
+        <hibernate.version>5.2.2.Final</hibernate.version>
     </properties>
-
 </project>
